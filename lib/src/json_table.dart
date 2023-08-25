@@ -145,10 +145,9 @@ class _JsonTableState extends State<JsonTable> {
                         } else {
                           filterHeaderList.add(header);
                         }
+                        widget.returnFilterList!(filterHeaderList as Set<String>);
 
-                        if (widget.returnFilterList != null && filterHeaderList.isNotEmpty) {
-                          widget.returnFilterList!(filterHeaderList.map((e) => e!).toSet());
-                        }
+
                       });
                     },
                   ),
