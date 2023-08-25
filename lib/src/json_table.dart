@@ -23,7 +23,7 @@ class JsonTable extends StatefulWidget {
   final OnRowSelect? onRowSelect;
   final Color? fieldSelectorColor;
   // final ValueNotifier<Set<String?>>? returnFilterList;
-  final Function(Set<String?>)? returnFilterList;
+  final Function(Set<String>)? returnFilterList;
 
   const JsonTable(
     this.dataList, {
@@ -146,8 +146,8 @@ class _JsonTableState extends State<JsonTable> {
                           filterHeaderList.add(header);
                         }
 
-                        if (widget.returnFilterList != null) {
-                          widget.returnFilterList!(filterHeaderList);
+                        if (widget.returnFilterList != null && filterHeaderList.isNotEmpty) {
+                          widget.returnFilterList!(filterHeaderList.map((e) => e!).toSet());
                         }
                       });
                     },
