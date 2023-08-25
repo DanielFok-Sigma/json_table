@@ -121,7 +121,7 @@ class _JsonTableState extends State<JsonTable> {
             children: <Widget>[
               for (String? header in headerList)
                 Material(
-                  // color: Colors.transparent,
+                  color: Colors.transparent,
                   child: InkWell(
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
