@@ -38,7 +38,7 @@ class JsonTable extends StatefulWidget {
     this.paginationRowCount,
     this.onRowSelect,
     this.fieldSelectorColor = Colors.blue,
-    this.returnFilterList,
+        this.returnFilterList,
   }) : super(key: key);
 
   @override
@@ -127,6 +127,7 @@ class _JsonTableState extends State<JsonTable> {
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         Checkbox(
+
                           fillColor: MaterialStateProperty.all(fieldSelectorColor),
                           // activeColor: Colors.orange,
                           value: filterHeaderList.contains(header),
@@ -145,8 +146,8 @@ class _JsonTableState extends State<JsonTable> {
                         } else {
                           filterHeaderList.add(header);
                         }
-                        widget.returnFilterList!(filterHeaderList as Set<String>);
 
+                        widget.returnFilterList!(filterHeaderList.map((e) => e ?? '').toSet());
 
                       });
                     },
